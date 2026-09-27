@@ -426,6 +426,11 @@ a {
   margin: 0 0 1.4em;
 }
 
+.lyrics-note {
+  font-size: 0.8em;
+  color: var(--text-soft);
+}
+
 .lyrics p:last-child {
   margin-bottom: 0;
 }
