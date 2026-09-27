@@ -291,6 +291,96 @@ a {
   font-weight: 700;
 }
 
+/* ---------- 楽曲紹介 ---------- */
+.track-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.track {
+  --c: var(--pink);
+  --c-bg: var(--bg-soft);
+  position: relative;
+  padding: 28px 28px 24px;
+  background: var(--white);
+  border: 3px solid var(--c);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.track::after {
+  content: "♪";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--c);
+}
+
+.track--sora     { --c: #b9d8f2; --c-bg: #f0f7fd; grid-column: 1 / -1; }
+.track--ruru     { --c: var(--ruru); --c-bg: var(--ruru-bg); }
+.track--together { --c: var(--pink); --c-bg: var(--bg-soft); }
+.track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); grid-column: 1 / -1; }
+
+.track-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--c-bg);
+  border: 2px solid var(--c);
+  border-radius: 999px;
+}
+
+.track-title {
+  margin: 8px 0 12px;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.track-sub {
+  display: inline-block;
+  margin-left: 0.6em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.track-text {
+  margin: 0;
+}
+
+.track-quote {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  font-weight: 700;
+  text-align: center;
+  background: var(--c-bg);
+  border-radius: 16px;
+}
+
+.track-audio {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--c-bg);
+  border-radius: 16px;
+}
+
+.track-audio-label {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.track-audio audio {
+  display: block;
+  width: 100%;
+}
+
 /* ---------- SNS ---------- */
 .sns-list {
   display: flex;
@@ -380,9 +470,9 @@ a {
   }
 
   .site-nav a {
-    flex: 1;
+    flex: 1 1 auto;
     padding: 4px 2px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     white-space: nowrap;
     text-align: center;
   }
@@ -435,6 +525,18 @@ a {
 
   .story {
     padding: 28px 20px;
+  }
+
+  .track-list {
+    grid-template-columns: 1fr;
+  }
+
+  .track {
+    padding: 24px 20px 20px;
+  }
+
+  .track-title {
+    font-size: 1.3rem;
   }
 
   .story-title {
