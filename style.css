@@ -294,7 +294,7 @@ a {
 /* ---------- 楽曲紹介 ---------- */
 .track-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
 }
 
@@ -319,10 +319,10 @@ a {
   color: var(--c);
 }
 
-.track--sora     { --c: #b9d8f2; --c-bg: #f0f7fd; grid-column: 1 / -1; }
+.track--sora     { --c: #b9d8f2; --c-bg: #f0f7fd; }
 .track--ruru     { --c: var(--ruru); --c-bg: var(--ruru-bg); }
 .track--together { --c: var(--pink); --c-bg: var(--bg-soft); }
-.track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); grid-column: 1 / -1; }
+.track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); }
 
 .track-tag {
   display: inline-block;
