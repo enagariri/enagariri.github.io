@@ -67,6 +67,10 @@ a {
   border-bottom: 2px dotted var(--line);
 }
 
+.logo img {
+  border-radius: 50%;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -125,7 +129,7 @@ a {
 
 .hero-image {
   width: 100%;
-  max-width: 880px;
+  max-width: 600px;
   margin: 0 auto;
   border-radius: 32px;
   box-shadow: var(--shadow);
@@ -191,8 +195,13 @@ a {
 
 .chara-image {
   background: var(--c-bg);
-  border-radius: 50%;
+  border-radius: 28px;
   padding: 8px;
+}
+
+.chara-image img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 .chara-tag {
@@ -319,7 +328,7 @@ a {
 
 .site-footer img {
   margin: 0 auto 8px;
-  border-radius: 16px;
+  border-radius: 50%;
 }
 
 .site-footer p {
@@ -338,7 +347,11 @@ a {
     padding: 8px 12px 6px;
   }
 
-  .logo {
+  .logo img {
+  border-radius: 50%;
+}
+
+.logo {
     font-size: 1rem;
   }
 
@@ -393,7 +406,8 @@ a {
   }
 
   .chara-image {
-    width: 180px;
+    width: 100%;
+    max-width: 320px;
     margin: 0 auto;
   }
 

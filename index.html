@@ -8,9 +8,10 @@
   <meta property="og:title" content="エナガりりちゃん">
   <meta property="og:description" content="シマエナガがモチーフの3姉妹、りりちゃん・るるちゃん・れいちゃんのキャラクターサイトです。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="images/trio.svg">
+  <meta property="og:image" content="images/top.jpg">
   <meta name="theme-color" content="#fdeef2">
-  <link rel="icon" href="images/riri.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
 <body>
   <header class="site-header">
     <a class="logo" href="#top">
-      <img src="images/riri.svg" alt="" width="36" height="36">
+      <img src="images/favicon.png" alt="" width="36" height="36">
       <span>エナガりりちゃん</span>
     </a>
     <nav class="site-nav" aria-label="メインメニュー">
@@ -35,10 +36,13 @@
     <section id="top" class="hero">
       <p class="hero-lead">シマエナガの3姉妹</p>
       <h1 class="hero-title">エナガりりちゃん</h1>
-      <!-- 3匹そろった画像。自作の画像に差し替える場合は src を変更してください -->
-      <img class="hero-image" src="images/trio.svg"
-           alt="りりちゃん・るるちゃん・れいちゃんの3姉妹が枝にならんでいるイラスト"
-           width="640" height="400">
+      <!-- 3匹そろった画像（images/top.webp と images/top.jpg） -->
+      <picture>
+        <source srcset="images/top.webp" type="image/webp">
+        <img class="hero-image" src="images/top.jpg"
+             alt="すずらん・ルリマツリ・ロウバイの花にかこまれて、枝にならんでよりそう3姉妹"
+             width="1200" height="1200" fetchpriority="high" decoding="async">
+      </picture>
       <p class="hero-text">
         ふわふわ、まんまる。<br>
         季節の花といっしょにくらす、<br class="sp-only">シマエナガの3姉妹です。
@@ -52,7 +56,10 @@
       <div class="chara-list">
         <article class="chara chara--riri" id="riri">
           <div class="chara-image">
-            <img src="images/riri.svg" alt="すずらんを頭にかざったりりちゃん" width="200" height="200" loading="lazy">
+            <picture>
+              <source srcset="images/riri.webp" type="image/webp">
+              <img src="images/riri.jpg" alt="すずらんのポシェットをさげて、桜の枝にとまるりりちゃん" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="chara-body">
             <p class="chara-tag">主人公</p>
@@ -71,7 +78,10 @@
 
         <article class="chara chara--ruru" id="ruru">
           <div class="chara-image">
-            <img src="images/ruru.svg" alt="ルリマツリを頭にかざったるるちゃん" width="200" height="200" loading="lazy">
+            <picture>
+              <source srcset="images/ruru.webp" type="image/webp">
+              <img src="images/ruru.jpg" alt="ルリマツリのポシェットをさげて、ルリマツリの枝にとまるるるちゃん" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="chara-body">
             <p class="chara-tag">姉妹</p>
@@ -90,7 +100,10 @@
 
         <article class="chara chara--rei" id="rei">
           <div class="chara-image">
-            <img src="images/rei.svg" alt="ロウバイの枝を頭にかざったれいちゃん" width="200" height="200" loading="lazy">
+            <picture>
+              <source srcset="images/rei.webp" type="image/webp">
+              <img src="images/rei.jpg" alt="ロウバイのポシェットをさげて、雪のつもったロウバイの枝にとまるれいちゃん" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
           </div>
           <div class="chara-body">
             <p class="chara-tag">姉妹</p>
@@ -147,7 +160,7 @@
   </main>
 
   <footer class="site-footer">
-    <img src="images/trio.svg" alt="" width="160" height="100" loading="lazy">
+    <img src="images/top-small.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
     <p><small>&copy; エナガりりちゃん</small></p>
   </footer>
 </body>
