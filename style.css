@@ -372,9 +372,7 @@ a {
 }
 
 .track-lyrics summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  display: inline-block;
   padding: 6px 18px;
   font-weight: 700;
   font-size: 0.95rem;
@@ -392,6 +390,8 @@ a {
 
 .track-lyrics summary::after {
   content: "▼";
+  display: inline-block;
+  margin-left: 6px;
   font-size: 0.7em;
   transition: transform 0.2s;
 }
@@ -505,6 +505,81 @@ a {
 /* ---------- スマホ ---------- */
 .sp-only {
   display: none;
+}
+
+/* ---------- 楽曲紹介（PC・タブレット：ジャケットを上にしたカードを横に並べる） ---------- */
+@media (min-width: 721px) {
+  .track-list {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .track.has-jacket {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .track::after {
+    display: none;
+  }
+
+  .track-jacket {
+    max-width: 180px;
+  }
+
+  .track-title {
+    margin: 6px 0 8px;
+    font-size: 1.15rem;
+  }
+
+  .track-sub {
+    font-size: 0.8rem;
+  }
+
+  .track-text {
+    font-size: 0.88rem;
+    line-height: 1.8;
+  }
+
+  .track-audio {
+    margin-top: 14px;
+    padding: 10px;
+  }
+
+  .track-audio-label {
+    font-size: 0.8rem;
+  }
+
+  .track-lyrics summary {
+    padding: 4px 14px;
+    font-size: 0.82rem;
+  }
+
+  .lyrics-song {
+    display: none;
+  }
+
+  .lyrics {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    line-height: 1.9;
+  }
+}
+
+@media (min-width: 961px) {
+  #music {
+    max-width: 1120px;
+  }
+
+  .track-list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .track-jacket {
+    max-width: none;
+  }
 }
 
 @media (max-width: 720px) {
