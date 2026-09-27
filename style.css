@@ -254,27 +254,41 @@ a {
 }
 
 /* ---------- ストーリー ---------- */
-.coming-soon {
-  padding: 40px 24px;
-  text-align: center;
+.story {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 48px;
   background: var(--white);
-  border: 3px dashed var(--line);
+  border: 3px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  line-height: 2.1;
 }
 
-.coming-soon p {
-  margin: 0;
+.story-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--pink-deep);
+  letter-spacing: 0.06em;
 }
 
-.coming-soon-badge {
-  display: inline-block;
-  margin-bottom: 12px !important;
-  padding: 4px 24px;
-  color: var(--white);
+.story-title::before,
+.story-title::after {
+  content: "♪";
+  margin: 0 0.5em;
+  color: var(--pink);
+  font-weight: 400;
+}
+
+.story p {
+  margin: 0 0 1.2em;
+}
+
+.story .story-last {
+  margin: 1.8em 0 0;
+  text-align: center;
   font-weight: 700;
-  letter-spacing: 0.2em;
-  background: var(--pink);
-  border-radius: 999px;
 }
 
 /* ---------- SNS ---------- */
@@ -417,6 +431,14 @@ a {
 
   .chara-text {
     text-align: left;
+  }
+
+  .story {
+    padding: 28px 20px;
+  }
+
+  .story-title {
+    font-size: 1.1rem;
   }
 
   .sns-list {
