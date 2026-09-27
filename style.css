@@ -291,6 +291,159 @@ a {
   font-weight: 700;
 }
 
+/* ---------- 楽曲紹介 ---------- */
+.track-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.track {
+  --c: var(--pink);
+  --c-bg: var(--bg-soft);
+  position: relative;
+  padding: 28px 28px 24px;
+  background: var(--white);
+  border: 3px solid var(--c);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.track::after {
+  content: "♪";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--c);
+}
+
+.track--sora     { --c: #b9d8f2; --c-bg: #f0f7fd; }
+.track--ruru     { --c: var(--ruru); --c-bg: var(--ruru-bg); }
+.track--together { --c: var(--pink); --c-bg: var(--bg-soft); }
+.track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); }
+
+.track-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--c-bg);
+  border: 2px solid var(--c);
+  border-radius: 999px;
+}
+
+.track-title {
+  margin: 8px 0 12px;
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.track-sub {
+  display: inline-block;
+  margin-left: 0.6em;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.track-text {
+  margin: 0;
+}
+
+.track.has-jacket {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: start;
+  gap: 28px;
+}
+
+.track-jacket img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(120, 140, 170, 0.25);
+}
+
+.track-lyrics {
+  margin-top: 16px;
+}
+
+.track-lyrics summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  list-style: none;
+  cursor: pointer;
+  background: var(--white);
+  border: 2px solid var(--c);
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.track-lyrics summary::-webkit-details-marker {
+  display: none;
+}
+
+.track-lyrics summary::after {
+  content: "▼";
+  font-size: 0.7em;
+  transition: transform 0.2s;
+}
+
+.track-lyrics[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.track-lyrics summary:hover,
+.track-lyrics summary:focus-visible {
+  background: var(--c-bg);
+}
+
+.lyrics {
+  margin-top: 16px;
+  padding: 20px 24px;
+  background: var(--c-bg);
+  border-radius: 16px;
+  line-height: 2;
+}
+
+.lyrics p {
+  margin: 0 0 1.4em;
+}
+
+.lyrics-note {
+  font-size: 0.8em;
+  color: var(--text-soft);
+}
+
+.lyrics p:last-child {
+  margin-bottom: 0;
+}
+
+.track-audio {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--c-bg);
+  border-radius: 16px;
+}
+
+.track-audio-label {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.track-audio audio {
+  display: block;
+  width: 100%;
+}
+
 /* ---------- SNS ---------- */
 .sns-list {
   display: flex;
@@ -380,9 +533,9 @@ a {
   }
 
   .site-nav a {
-    flex: 1;
+    flex: 1 1 auto;
     padding: 4px 2px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     white-space: nowrap;
     text-align: center;
   }
@@ -435,6 +588,33 @@ a {
 
   .story {
     padding: 28px 20px;
+  }
+
+  .track-list {
+    grid-template-columns: 1fr;
+  }
+
+  .track {
+    padding: 24px 20px 20px;
+  }
+
+  .track-title {
+    font-size: 1.3rem;
+  }
+
+  .track.has-jacket {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .track-jacket {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .lyrics {
+    padding: 16px 18px;
   }
 
   .story-title {
