@@ -344,7 +344,7 @@ a {
 
 .track-sub {
   display: inline-block;
-  margin-left: 0.6em;
+  margin-left: 0.3em;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-soft);
@@ -356,7 +356,7 @@ a {
 
 .track.has-jacket {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 150px 1fr;
   align-items: start;
   gap: 28px;
 }
@@ -607,9 +607,13 @@ a {
     gap: 16px;
   }
 
+  .track-list {
+    gap: 32px;
+  }
+
   .track-jacket {
     width: 100%;
-    max-width: 280px;
+    max-width: 150px;
     margin: 0 auto;
   }
 
