@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>りりちゃんのYouTube｜エナガりりちゃん</title>
+  <meta name="description" content="エナガりりちゃんのYouTubeチャンネルの紹介ページです。最新動画もここから見られます。">
+  <meta property="og:title" content="りりちゃんのYouTube｜エナガりりちゃん">
+  <meta property="og:description" content="エナガりりちゃんのYouTubeチャンネルの紹介ページです。最新動画もここから見られます。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/top.jpg">
+  <meta name="theme-color" content="#fdeef2">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/favicon.png" alt="" width="36" height="36">
+      <span>エナガりりちゃん</span>
+    </a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="index.html#top">トップ</a>
+      <a href="index.html#characters">キャラクター</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="index.html#music">楽曲</a>
+      <a href="index.html#sns">SNS</a>
+      <a href="youtube.html" aria-current="page">YouTube</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section yt">
+      <h1 class="section-title"><span>りりちゃんのYouTube</span></h1>
+
+      <div class="yt-intro">
+        <p class="yt-intro-en" lang="en">
+          Welcome to Riri's YouTube channel! Enjoy songs and little stories of the three Shima-enaga sisters — Riri, Ruru and Rei.
+        </p>
+        <p class="yt-intro-ja">
+          りりちゃんたち、シマエナガ3姉妹の歌やおはなしをおとどけしています。<br class="pc-only">
+          ぜひチャンネル登録して、いっしょに楽しんでね。
+        </p>
+        <a class="yt-button" href="https://www.youtube.com/@enagariri" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3-5.8 3Z"/></svg>
+          <span>YouTubeチャンネルを見る</span>
+        </a>
+      </div>
+
+      <h2 class="yt-latest-title">最新の動画</h2>
+      <!--
+        最新動画の埋め込み
+        data-channel-id に YouTube のチャンネルID（UC から始まる24文字）を入れてください。
+        先頭の「UC」を「UU」に変えた「アップロード動画の再生リスト」を埋め込むので、
+        新しい動画を投稿すると自動でいちばん上に表示されます。
+      -->
+      <div class="yt-embed" id="yt-embed" data-channel-id="">
+        <div class="yt-embed-fallback">
+          <p>動画はYouTubeチャンネルで見られます。</p>
+          <a href="https://www.youtube.com/@enagariri" target="_blank" rel="noopener">チャンネルをひらく</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="images/top-small.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
+    <p><small>&copy; エナガりりちゃん</small></p>
+  </footer>
+
+  <script>
+    (function () {
+      var box = document.getElementById('yt-embed');
+      var channelId = (box.getAttribute('data-channel-id') || '').trim();
+      if (!/^UC[\w-]{22}$/.test(channelId)) return;
+
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/videoseries?list=UU' + channelId.slice(2);
+      iframe.title = 'りりちゃんのYouTube 最新の動画';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      box.innerHTML = '';
+      box.appendChild(iframe);
+    })();
+  </script>
+</body>
+</html>
