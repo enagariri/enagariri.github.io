@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 1840" role="img" aria-label="不死鳥のロゴ">
+  <defs>
+    <linearGradient id="pg" gradientUnits="userSpaceOnUse" x1="0" y1="120" x2="0" y2="1700">
+      <stop offset="0" stop-color="#e6d9ff"/>
+      <stop offset="0.45" stop-color="#b794ff"/>
+      <stop offset="1" stop-color="#7b3ff2"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <g id="wing" fill="none" stroke-linejoin="round">
+      <path d="M895 640 Q1250 330 1525 270 Q1280 480 975 615"/>
+      <path d="M985 608 Q1200 440 1405 380"/>
+      <path d="M1578 503 L1168 575 M1578 503 Q1400 585 1250 600"/>
+      <path d="M990 682 Q1250 580 1445 592 Q1250 640 1080 680 Z"/>
+      <path d="M970 725 Q1250 775 1465 768 Q1200 815 975 742"/>
+      <path d="M1000 742 Q1180 765 1340 776"/>
+    </g>
+    <g id="tail" fill="none">
+      <path d="M880 900 C800 1050 560 1300 520 1470 C505 1560 590 1615 640 1560 C665 1525 625 1488 580 1500"/>
+      <path d="M880 920 L682 1300"/>
+      <path d="M760 1745 C705 1690 790 1650 745 1565 C830 1625 830 1695 760 1745 Z" stroke-width="7"/>
+      <path d="M830 1760 C800 1715 855 1690 825 1630 C885 1675 875 1725 830 1760 Z" stroke-width="7" opacity="0.75"/>
+      <circle cx="690" cy="1625" r="7" fill="currentColor" stroke="none"/>
+      <circle cx="725" cy="1520" r="5" fill="currentColor" stroke="none"/>
+      <circle cx="800" cy="1590" r="5" fill="currentColor" stroke="none"/>
+      <circle cx="660" cy="1545" r="4" fill="currentColor" stroke="none" opacity="0.6"/>
+    </g>
+    <g id="art" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+      <use href="#wing"/>
+      <use href="#wing" transform="translate(1760 0) scale(-1 1)"/>
+      <use href="#tail"/>
+      <use href="#tail" transform="translate(1760 0) scale(-1 1)"/>
+      <path d="M880 900 L880 1500 Q885 1585 930 1585 Q962 1570 942 1540 Q912 1528 898 1560"/>
+      <path d="M876 500 C800 600 800 780 880 900 C960 780 960 600 884 500"/>
+      <path d="M875 565 C855 650 860 760 880 830"/>
+      <path d="M880 372 C875 290 855 190 823 125 M876 370 C830 300 790 240 710 183 M902 372 C930 290 970 235 1017 198"/>
+      <circle cx="880" cy="430" r="50"/>
+      <path d="M934 415 L1002 433 L938 456"/>
+      <circle cx="895" cy="422" r="9" fill="#f3ecff" stroke="none"/>
+    </g>
+  </defs>
+  <rect width="1760" height="1840" fill="#08061a"/>
+  <use href="#art" stroke="#8a5cf5" color="#8a5cf5" opacity="0.8" filter="url(#glow)"/>
+  <use href="#art" stroke="url(#pg)" color="#a47dff"/>
+</svg>
