@@ -1038,53 +1038,52 @@ a {
 
 /* ---------- 絵本 ---------- */
 .ehon {
-  --ehon-paper: #fffdf6;
   --ehon-line: #eadfc9;
-  max-width: 920px;
+  --ehon-paper: linear-gradient(160deg, #fff7f4 0%, #f4f8ff 55%, #fffbe9 100%);
+  max-width: 1040px;
   margin: 0 auto;
 }
 
-.ehon-layout {
-  display: grid;
-  gap: 32px;
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 560px;
-  margin: 0 auto;
-}
-
-@media (min-width: 900px) {
-  .ehon-layout {
-    grid-template-columns: minmax(0, 560px) 300px;
-    justify-content: center;
-    align-items: start;
-    max-width: none;
-  }
-
-  .ehon-cal {
-    position: sticky;
-    top: calc(var(--header-h) + 20px);
-  }
-}
-
-.ehon-book {
-  display: grid;
-  gap: 32px;
-}
-
-.ehon-leaf {
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.ehon-face {
-  padding: 32px 28px 36px;
+.ehon-count {
+  margin: 20px 0 0;
   text-align: center;
-  background: linear-gradient(160deg, #fff7f4 0%, #f4f8ff 55%, #fffbe9 100%);
-  border: 1px solid var(--ehon-line);
-  border-radius: 6px 24px 24px 6px;
-  box-shadow: 0 6px 22px rgba(150, 130, 100, 0.18);
+  letter-spacing: 0.1em;
 }
 
+/* --- JavaScriptが使えないとき：見開きを縦に並べて読む --- */
+.ehon-spread {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  overflow: hidden;
+  background: var(--ehon-paper);
+  border: 1px solid var(--ehon-line);
+  border-radius: 24px;
+  box-shadow: 0 6px 22px rgba(150, 130, 100, 0.16);
+}
+
+.ehon-art {
+  padding: 20px 20px 0;
+  text-align: center;
+}
+
+.ehon-art img {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(150, 140, 120, 0.22);
+}
+
+.ehon-story {
+  padding: 24px 24px 30px;
+  text-align: center;
+}
+
+.js .ehon-source {
+  display: none;
+}
+
+/* --- 本の中身（ページの文字・絵） --- */
 .ehon-date {
   margin: 0 0 6px;
   font-size: 0.95rem;
@@ -1093,8 +1092,8 @@ a {
 }
 
 .ehon-title {
-  margin: 0 0 22px;
-  font-size: 1.4rem;
+  margin: 0 0 20px;
+  font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.6;
@@ -1102,30 +1101,18 @@ a {
   word-break: keep-all;
 }
 
-.ehon-image {
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto 26px;
-  border-radius: 18px;
-  box-shadow: 0 4px 14px rgba(150, 140, 120, 0.2);
-}
-
-.ehon-image--tall {
-  max-width: 360px;
-}
-
 .ehon-text p {
-  margin: 0 0 0.9em;
-  line-height: 2;
+  margin: 0 0 0.8em;
+  line-height: 1.95;
 }
 
 .ehon-text .ehon-last {
-  margin: 1.4em 0 0;
+  margin: 1.2em 0 0;
   font-weight: 500;
 }
 
 .ehon-link {
-  margin: 28px 0 0;
+  margin: 24px 0 0;
 }
 
 .ehon-link a {
@@ -1133,25 +1120,18 @@ a {
   text-underline-offset: 4px;
 }
 
-.ehon-cover {
-  padding-top: 40px;
-  padding-bottom: 44px;
-  background: linear-gradient(160deg, #fde9ee 0%, #e9f1ff 55%, #fff4cf 100%);
+.ehon-story--center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .ehon-cover-title {
-  margin: 0 0 22px;
+  margin: 0 0 18px;
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 0.12em;
-}
-
-.ehon-cover-image {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto 22px;
-  border-radius: 20px;
-  box-shadow: 0 4px 14px rgba(150, 140, 120, 0.25);
 }
 
 .ehon-cover-sub {
@@ -1160,14 +1140,9 @@ a {
 }
 
 .ehon-hint {
-  display: none;
-  margin: 18px 0 0;
+  margin: 22px 0 0;
   font-size: 0.85rem;
   color: #9a8a73;
-}
-
-.ehon-end {
-  padding: 72px 28px 80px;
 }
 
 .ehon-end-title {
@@ -1182,132 +1157,288 @@ a {
   line-height: 2;
 }
 
-.ehon-back {
-  display: none;
-}
-
-.ehon-nav {
+/* --- 本（JavaScript） --- */
+.ehon-row {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 28px;
+  gap: 12px;
 }
 
-.ehon-btn {
-  white-space: nowrap;
-  padding: 8px 18px;
+.ehon-stage {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  perspective: 2600px;
+}
+
+.ehon-turn {
+  flex: none;
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  padding: 0 0 4px;
   font: inherit;
-  color: inherit;
-  background: rgba(255, 253, 247, 0.95);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--pd-ink);
+  background: rgba(255, 253, 247, 0.96);
   border: 1px solid var(--ehon-line);
-  border-radius: 999px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(150, 130, 100, 0.25);
   cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
 }
 
-.ehon-btn:disabled {
-  opacity: 0.4;
+.ehon-turn:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.ehon-turn:disabled {
+  opacity: 0.3;
   cursor: default;
 }
 
-.ehon-btn:focus-visible {
+.ehon-turn:focus-visible {
   outline: 3px solid var(--pd-green);
   outline-offset: 2px;
 }
 
-.ehon-count {
-  min-width: 4em;
-  text-align: center;
-  font-size: 0.95rem;
-  letter-spacing: 0.1em;
+.ehon-page {
+  overflow: hidden;
+  background: var(--ehon-paper);
+  border: 1px solid var(--ehon-line);
 }
 
-/* JavaScriptが使えるとき：ページを重ねて、めくれるようにする */
-.js .ehon-book {
-  display: grid;
-  align-items: start;
-  gap: 0;
-  transition: height 0.5s ease;
-  perspective: 2000px;
-  cursor: pointer;
+.ehon-page--l {
+  border-right: 0;
+  border-radius: 20px 0 0 20px;
+  box-shadow: inset -18px 0 20px -18px rgba(110, 90, 60, 0.4);
 }
 
-.js .ehon-leaf {
-  grid-area: 1 / 1;
+.ehon-page--r {
+  border-left: 0;
+  border-radius: 0 20px 20px 0;
+  box-shadow: inset 18px 0 20px -18px rgba(110, 90, 60, 0.4);
+}
+
+/* 見開き（タブレット・パソコン）：左に絵、右に文章 */
+.is-spread .ehon-stage {
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(150, 130, 100, 0.22);
+}
+
+.is-spread .ehon-base,
+.is-spread .ehon-stack {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.is-spread .ehon-base {
+  left: 0;
+}
+
+.is-spread .ehon-stack {
+  right: 0;
+}
+
+.is-spread .ehon-leaf {
+  position: absolute;
+  inset: 0;
   transform-origin: left center;
-  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.3, 1);
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.5, 0.05, 0.25, 1);
 }
 
-.js .ehon-leaf.is-flipped {
+.is-spread .ehon-leaf.is-flipped {
   transform: rotateY(-180deg);
 }
 
-.js .ehon-leaf.is-gone,
-.js .ehon-leaf.is-wait {
-  visibility: hidden;
+.is-spread .ehon-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.js .ehon-leaf {
-  align-self: start;
+.is-spread .ehon-back {
+  transform: rotateY(180deg);
 }
 
-.js .ehon-leaf.no-anim {
+.is-spread .ehon-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 18px;
+}
+
+.is-spread .ehon-art picture {
+  display: contents;
+}
+
+.is-spread .ehon-art img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.is-spread .ehon-page--r {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 30px 28px;
+  overflow: auto;
+}
+
+.is-spread .ehon-story {
+  margin: auto 0;
+  padding: 0;
+}
+
+/* ページがめくれる間の、ほんのりした影 */
+.is-spread .ehon-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(90, 70, 40, 0.28), rgba(90, 70, 40, 0) 70%);
+}
+
+.is-spread .ehon-back::after {
+  background: linear-gradient(to left, rgba(90, 70, 40, 0.28), rgba(90, 70, 40, 0) 70%);
+}
+
+.is-spread .ehon-leaf.is-turning .ehon-face::after {
+  animation: ehon-shade 0.85s ease-in-out;
+}
+
+@keyframes ehon-shade {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.ehon-leaf.no-anim {
   transition: none;
 }
 
-.js .ehon-face {
+/* スマホ：上に絵、下に文章。ページ全体がめくれる */
+.is-single .ehon-turn {
+  position: absolute;
+  top: 38%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.6rem;
+  background: rgba(255, 253, 247, 0.88);
+}
+
+.is-single .ehon-turn--prev {
+  left: -10px;
+}
+
+.is-single .ehon-turn--next {
+  right: -10px;
+}
+
+.is-single .ehon-stage {
+  display: grid;
+  align-items: start;
+  transition: height 0.5s ease;
+}
+
+.is-single .ehon-leaf {
+  grid-area: 1 / 1;
+  align-self: start;
+  position: relative;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.45, 0.05, 0.3, 1);
+}
+
+.is-single .ehon-leaf.is-flipped {
+  transform: rotateY(-180deg);
+}
+
+.is-single .ehon-leaf.is-gone,
+.is-single .ehon-leaf.is-wait {
+  visibility: hidden;
+}
+
+.is-single .ehon-face {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-.js .ehon-back {
-  display: block;
+.is-single .ehon-card {
+  overflow: hidden;
+  background: var(--ehon-paper);
+  border: 1px solid var(--ehon-line);
+  border-radius: 6px 24px 24px 6px;
+  box-shadow: 0 6px 22px rgba(150, 130, 100, 0.18);
+}
+
+.is-single .ehon-art {
+  padding: 22px 22px 0;
+}
+
+.is-single .ehon-story {
+  padding: 20px 20px 28px;
+}
+
+.is-single .ehon-back {
   position: absolute;
   inset: 0;
   transform: rotateY(180deg);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
   background: linear-gradient(200deg, #fffaf0, #f6eedb);
   border: 1px solid var(--ehon-line);
   border-radius: 24px 6px 6px 24px;
 }
 
-.js .ehon.is-first .ehon-hint {
-  display: block;
+/* タブレット：ボタンは本のはしに重ねて、本をできるだけ広く */
+@media (max-width: 1099px) {
+  .is-spread .ehon-turn {
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+    background: rgba(255, 253, 247, 0.88);
+  }
+
+  .is-spread .ehon-turn--prev {
+    left: -10px;
+  }
+
+  .is-spread .ehon-turn--next {
+    right: -10px;
+  }
 }
 
 @media (max-width: 720px) {
-  .ehon-face {
-    padding: 26px 18px 30px;
-  }
-
   .ehon-title {
     font-size: 1.2rem;
-  }
-
-  .ehon-nav {
-    gap: 8px;
-  }
-
-  .ehon-btn {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  .ehon-cover-title {
-    font-size: 1.5rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .js .ehon-leaf,
-  .js .ehon-book {
-    transition: none;
+  .ehon-leaf,
+  .ehon-stage {
+    transition: none !important;
   }
 }
 
 /* ---------- 絵本のカレンダー ---------- */
 .ehon-cal {
+  max-width: 360px;
+  margin: 0 auto 40px;
   padding: 18px 14px 16px;
   background: linear-gradient(160deg, #fff7f4 0%, #f4f8ff 60%, #fffbe9 100%);
   border: 1px solid var(--ehon-line);
@@ -1429,4 +1560,16 @@ a {
   font-size: 0.82rem;
   text-align: center;
   color: #9a8a73;
+}
+
+/* メニューが7つになったので、タブレット幅でも折り返さないようにする */
+.site-nav a {
+  white-space: nowrap;
+}
+
+@media (min-width: 721px) and (max-width: 900px) {
+  .site-nav a {
+    padding: 6px 8px;
+    font-size: 0.88rem;
+  }
 }
