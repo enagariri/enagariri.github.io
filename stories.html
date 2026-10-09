@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三姉妹のおはなし｜エナガりりちゃん</title>
+  <meta name="description" content="ららの木のおはなし、れいちゃんがうまれたおはなし、絵画を旅するおはなし。三姉妹の小さなおはなしを集めたページです。">
+  <meta property="og:title" content="三姉妹のおはなし｜エナガりりちゃん">
+  <meta property="og:description" content="ららの木のおはなし、れいちゃんがうまれたおはなし、絵画を旅するおはなし。三姉妹の小さなおはなしを集めたページです。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/top.jpg">
+  <meta name="theme-color" content="#fdeef2">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/favicon.png" alt="" width="36" height="36">
+      <span>エナガりりちゃん</span>
+    </a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="index.html#top">トップ</a>
+      <a href="index.html#characters">キャラクター</a>
+      <a href="pendant.html">ペンダント</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="stories.html" aria-current="page">おはなし</a>
+      <a href="index.html#music">楽曲</a>
+      <a href="index.html#sns">SNS</a>
+      <a href="youtube.html">YouTube</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- おはなし一覧。新しいおはなしは、下の <article class="gift"> をコピーして、id・見出し・画像・本文を書きかえて追加します -->
+    <section class="pendant-section tale-section" aria-labelledby="tales-title">
+      <h1 class="section-title" id="tales-title"><span>三姉妹のおはなし</span></h1>
+      <p class="section-lead">ららの木のこと、れいちゃんのこと、絵画をめぐる旅のこと。小さなおはなしを、すこしずつ。</p>
+
+      <!-- クリスマスのおはなし（見出し・本文・画像は、この中を書きかえるだけで変更できます） -->
+      <article class="gift" id="rara-christmas">
+        <h2 class="gift-title">ららの木からの<wbr>クリスマスプレゼント</h2>
+        <button type="button" class="pendant-zoom gift-image" data-full="images/pendants/christmas.webp" data-alt="スズランとルリマツリとロウバイの花にかこまれ、枝にならんでよりそう三姉妹。胸もとには真珠、ラピスラズリ、琥珀のペンダント" aria-label="三姉妹の画像を拡大して見る">
+          <picture>
+            <source srcset="images/pendants/christmas.webp" type="image/webp">
+            <img src="images/pendants/christmas.jpg" alt="スズランとルリマツリとロウバイの花にかこまれ、枝にならんでよりそう三姉妹。胸もとには真珠、ラピスラズリ、琥珀のペンダント" width="1000" height="1000" loading="lazy" decoding="async">
+          </picture>
+        </button>
+        <div class="gift-text">
+          <p>雪がしずかに降る、クリスマスの朝。</p>
+          <p>ららの木から、三姉妹に小さな贈りものが届きました。</p>
+          <p>りりちゃんには、スズランのように白く輝く真珠。</p>
+          <p>るるちゃんには、夜空の星を閉じこめたようなラピスラズリ。</p>
+          <p>れいちゃんには、おひさまのぬくもりを宿した琥珀。</p>
+          <p>そして、れいちゃんの琥珀には、ときどき小さな白い光がともります。</p>
+          <p>それは、りりと一緒にいる、やさしいしるし。</p>
+          <p class="gift-last">三つの小さな宝石は、今日も三姉妹の胸で、そっと輝いています。</p>
+        </div>
+      </article>
+
+      <p class="pendant-back"><a href="pendant.html">← ペンダント紹介へもどる</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="images/top-small.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
+    <p><small>&copy; エナガりりちゃん</small></p>
+  </footer>
+
+
+  <!-- 画像の拡大表示 -->
+  <dialog class="lightbox" id="lightbox" aria-label="画像の拡大表示">
+    <button type="button" class="lightbox-close" aria-label="閉じる">×</button>
+    <img src="" alt="" width="768" height="512">
+  </dialog>
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox');
+      if (!box || typeof box.showModal !== 'function') return;
+      var img = box.querySelector('img');
+      document.querySelectorAll('.pendant-zoom').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          img.src = btn.dataset.full;
+          img.alt = btn.dataset.alt;
+          box.showModal();
+        });
+      });
+      box.addEventListener('click', function () { box.close(); });
+      box.addEventListener('close', function () { img.removeAttribute('src'); });
+    })();
+  </script>
+</body>
+</html>

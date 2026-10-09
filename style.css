@@ -1076,4 +1076,23 @@ a {
 
 .gift-title {
   text-wrap: balance;
+  word-break: keep-all;
+}
+
+.pendant-more {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pendant-more a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+.tale-section .gift {
+  margin-top: 0;
+}
+
+.tale-section .gift + .gift {
+  margin-top: 40px;
 }
