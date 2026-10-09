@@ -38,57 +38,67 @@
   <main>
     <section class="pendant-section tale-section" aria-labelledby="ehon-title">
       <!--
-        絵本のページ。上から順にめくれます。
-        新しいおはなしは、下の「おはなしのページ」の <section class="ehon-leaf"> を1つコピーし、
+        絵本のページ。1つの <section class="ehon-spread"> が、見開き1つ分です。
+          左のページ：.ehon-art（絵）／右のページ：.ehon-story（日付・見出し・本文）
+        新しいおはなしは、下の「おはなし」の <section class="ehon-spread"> を1つコピーし、
         id・data-date（年-月-日）・日付の表示・見出し・画像・本文を書きかえて「おしまいのページ」の前に追加してください。
-        data-date をつけたページが、カレンダーの日付から読めるようになります。
+        data-date をつけたページが、ページ上部のカレンダーから読めるようになります。
         ページは日付の早い順に並べてください（めくる順番は、HTMLに書いた順番です）。
       -->
-      <div class="ehon" id="ehon">
-       <div class="ehon-layout">
-        <div class="ehon-main">
-        <div class="ehon-book">
+      <h1 class="section-title" id="ehon-title"><span>三姉妹のえほん</span></h1>
+      <p class="section-lead">日付をえらぶか、ページをめくって、おはなしを読もう。</p>
 
+      <aside class="ehon-cal" id="ehon-cal" aria-label="おはなしカレンダー" hidden></aside>
+
+      <div class="ehon" id="ehon">
+        <div class="ehon-book"></div>
+        <p class="ehon-count" aria-live="polite" hidden></p>
+
+        <div class="ehon-source">
           <!-- 表紙 -->
-          <section class="ehon-leaf" id="cover" aria-label="表紙">
-            <div class="ehon-face ehon-front ehon-cover">
-              <h1 class="ehon-cover-title" id="ehon-title">三姉妹のえほん</h1>
+          <section class="ehon-spread" id="cover" aria-label="表紙">
+            <div class="ehon-art">
               <picture>
                 <source srcset="images/ehon/cover.webp" type="image/webp">
-                <img class="ehon-cover-image" src="images/ehon/cover.jpg" alt="花にかこまれて、枝にならんでよりそう三姉妹" width="480" height="480" decoding="async">
+                <img class="ehon-image" src="images/ehon/cover.jpg" alt="花にかこまれて、枝にならんでよりそう三姉妹" width="480" height="480" decoding="async">
               </picture>
-              <p class="ehon-cover-sub">りり・るる・れいの、小さなおはなし</p>
-              <p class="ehon-hint">ページをめくってね。<br>カレンダーの日付からも、えらべるよ。</p>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
+            <div class="ehon-story ehon-story--center">
+              <p class="ehon-cover-title">三姉妹のえほん</p>
+              <p class="ehon-cover-sub">りり・るる・れいの、小さなおはなし</p>
+              <p class="ehon-hint">右のボタンで、ページをめくってね。</p>
+            </div>
           </section>
 
-          <!-- おはなしのページ -->
-          <section class="ehon-leaf" id="rara-tree-day" data-date="2026-12-01" aria-label="12月1日 ららのき">
-            <div class="ehon-face ehon-front">
-              <p class="ehon-date">12月1日</p>
-              <h2 class="ehon-title">ららのき</h2>
+          <!-- おはなし（日付の早い順に並べます） -->
+          <section class="ehon-spread" id="rara-tree-day" data-date="2026-12-01" aria-label="12月1日 ららのき">
+            <div class="ehon-art">
               <picture>
                 <source srcset="images/ehon/rara-tree-day.webp" type="image/webp">
-                <img class="ehon-image ehon-image--tall" src="images/ehon/rara-tree-day.jpg" alt="朝の光がさしこむ雪の森に立つ、大きなららのき。枝には雪がつもっている" width="720" height="900" loading="lazy" decoding="async">
+                <img class="ehon-image" src="images/ehon/rara-tree-day.jpg" alt="朝の光がさしこむ雪の森に立つ、大きなららのき。枝には雪がつもっている" width="720" height="900" decoding="async">
               </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">12月1日</p>
+              <h2 class="ehon-title">ららのき</h2>
               <div class="ehon-text">
                 <p>森のまんなかに、大きな木が立っています。</p>
                 <p>雪をかぶっても、朝の光をあびて、やさしくゆれています。</p>
                 <p class="ehon-last">その木の名前は、ららのき。りり、るる、れいの、おうちのある木です。</p>
               </div>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
           </section>
 
-          <section class="ehon-leaf" id="rara-nest" data-date="2026-12-02" aria-label="12月2日 わたしたちのおうち">
-            <div class="ehon-face ehon-front">
-              <p class="ehon-date">12月2日</p>
-              <h2 class="ehon-title">わたしたちのおうち</h2>
+          <section class="ehon-spread" id="rara-nest" data-date="2026-12-02" aria-label="12月2日 わたしたちのおうち">
+            <div class="ehon-art">
               <picture>
                 <source srcset="images/ehon/rara-nest.webp" type="image/webp">
-                <img class="ehon-image ehon-image--tall" src="images/ehon/rara-nest.jpg" alt="ららのきの幹のあいだにある小さな巣。スズランの花がよりそい、白い羽がのぞいている" width="720" height="900" loading="lazy" decoding="async">
+                <img class="ehon-image" src="images/ehon/rara-nest.jpg" alt="ららのきの幹のあいだにある小さな巣。スズランの花がよりそい、白い羽がのぞいている" width="720" height="900" decoding="async">
               </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">12月2日</p>
+              <h2 class="ehon-title">わたしたちのおうち</h2>
               <div class="ehon-text">
                 <p>ららのきの幹と幹のあいだに、小さな巣があります。</p>
                 <p>ふわふわの羽と、やわらかなこけのベッド。入り口では、スズランの花がそっとゆれています。</p>
@@ -96,17 +106,18 @@
                 <p class="ehon-last">ここが、わたしたちのおうち。</p>
               </div>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
           </section>
 
-          <section class="ehon-leaf" id="rara-tree-night" data-date="2026-12-24" aria-label="12月24日 特別な夜に輝く、ららのき">
-            <div class="ehon-face ehon-front">
-              <p class="ehon-date">12月24日</p>
-              <h2 class="ehon-title">特別な夜に輝く、ららのき</h2>
+          <section class="ehon-spread" id="rara-tree-night" data-date="2026-12-24" aria-label="12月24日 特別な夜に輝く、ららのき">
+            <div class="ehon-art">
               <picture>
                 <source srcset="images/ehon/rara-tree-night.webp" type="image/webp">
-                <img class="ehon-image ehon-image--tall" src="images/ehon/rara-tree-night.jpg" alt="雪がふる夜の森で、やさしい紫の光につつまれて立つららのき" width="720" height="900" loading="lazy" decoding="async">
+                <img class="ehon-image" src="images/ehon/rara-tree-night.jpg" alt="雪がふる夜の森で、やさしい紫の光につつまれて立つららのき" width="720" height="900" decoding="async">
               </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">12月24日</p>
+              <h2 class="ehon-title">特別な夜に輝く、ららのき</h2>
               <div class="ehon-text">
                 <p>クリスマスの前の夜。雪がしんしんと降る森で、ららのきが、ふわりと光りはじめました。</p>
                 <p>枝の先から、むらさきの小さな光がこぼれて、森じゅうを、やさしく照らします。</p>
@@ -114,17 +125,18 @@
                 <p class="ehon-last">三姉妹は、羽をよせあって、その光をいつまでも見上げていました。</p>
               </div>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
           </section>
 
-          <section class="ehon-leaf" id="rara-christmas" data-date="2026-12-25" aria-label="12月25日 ららのきからのクリスマスプレゼント">
-            <div class="ehon-face ehon-front">
-              <p class="ehon-date">12月25日</p>
-              <h2 class="ehon-title">ららのきからの<wbr>クリスマスプレゼント</h2>
+          <section class="ehon-spread" id="rara-christmas" data-date="2026-12-25" aria-label="12月25日 ららのきからのクリスマスプレゼント">
+            <div class="ehon-art">
               <picture>
                 <source srcset="images/pendants/christmas.webp" type="image/webp">
-                <img class="ehon-image" src="images/pendants/christmas.jpg" alt="スズランとルリマツリとロウバイの花にかこまれ、枝にならんでよりそう三姉妹。胸もとには真珠、ラピスラズリ、琥珀のペンダント" width="1000" height="1000" loading="lazy" decoding="async">
+                <img class="ehon-image" src="images/pendants/christmas.jpg" alt="スズランとルリマツリとロウバイの花にかこまれ、枝にならんでよりそう三姉妹。胸もとには真珠、ラピスラズリ、琥珀のペンダント" width="1000" height="1000" decoding="async">
               </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">12月25日</p>
+              <h2 class="ehon-title">ららのきからの<wbr>クリスマスプレゼント</h2>
               <div class="ehon-text">
                 <p>雪がしずかに降る、クリスマスの朝。</p>
                 <p>ららのきから、三姉妹に小さな贈りものが届きました。</p>
@@ -137,28 +149,22 @@
               </div>
               <p class="ehon-link"><a href="pendant.html">三姉妹の小さなペンダントを見る →</a></p>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
           </section>
 
           <!-- おしまいのページ -->
-          <section class="ehon-leaf" id="to-be-continued" aria-label="つづく">
-            <div class="ehon-face ehon-front ehon-end">
+          <section class="ehon-spread" id="to-be-continued" aria-label="つづく">
+            <div class="ehon-art">
+              <picture>
+                <source srcset="images/ehon/cover.webp" type="image/webp">
+                <img class="ehon-image" src="images/ehon/cover.jpg" alt="" width="480" height="480" decoding="async">
+              </picture>
+            </div>
+            <div class="ehon-story ehon-story--center">
               <p class="ehon-end-title">つづく</p>
               <p class="ehon-end-text">つぎのおはなしを、<br>おたのしみに。</p>
             </div>
-            <div class="ehon-back" aria-hidden="true"></div>
           </section>
-
         </div>
-
-        <div class="ehon-nav" hidden>
-          <button type="button" class="ehon-btn" data-ehon="prev">← まえのページ</button>
-          <span class="ehon-count" aria-live="polite"></span>
-          <button type="button" class="ehon-btn" data-ehon="next">つぎのページ →</button>
-        </div>
-        </div>
-        <aside class="ehon-cal" id="ehon-cal" aria-label="おはなしカレンダー" hidden></aside>
-       </div>
       </div>
     </section>
   </main>
@@ -173,33 +179,19 @@
     (function () {
       var root = document.getElementById('ehon');
       if (!root) return;
-      var leaves = Array.prototype.slice.call(root.querySelectorAll('.ehon-leaf'));
+      var source = Array.prototype.slice.call(root.querySelectorAll('.ehon-source > .ehon-spread'));
       var book = root.querySelector('.ehon-book');
-      var nav = root.querySelector('.ehon-nav');
+      var countEl = root.querySelector('.ehon-count');
       var cal = document.getElementById('ehon-cal');
-      var prevBtn = root.querySelector('[data-ehon="prev"]');
-      var nextBtn = root.querySelector('[data-ehon="next"]');
-      var count = root.querySelector('.ehon-count');
-      var n = leaves.length;
+      var n = source.length;
       var idx = 0;
       var busy = false;
+      var mode = '';
+      var leaves = [], stage = null, base = null, prevBtn = null, nextBtn = null;
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var wide = window.matchMedia('(min-width: 720px)');
       var WEEK = ['日', '月', '火', '水', '木', '金', '土'];
-
-      /* ---- カレンダー用データ（data-date のあるページ） ---- */
-      var byDate = {};
-      var months = [];
-      leaves.forEach(function (leaf, i) {
-        var d = leaf.getAttribute('data-date');
-        if (!d) return;
-        byDate[d] = i;
-        var ym = d.slice(0, 7);
-        if (months.indexOf(ym) < 0) months.push(ym);
-      });
-      months.sort();
-      var calMonth = months[0] || null;
-
-      function pad(v) { return v < 10 ? '0' + v : '' + v; }
+      var TURN = 900;
 
       function el(tag, cls, text) {
         var e = document.createElement(tag);
@@ -207,6 +199,21 @@
         if (text !== undefined) e.textContent = text;
         return e;
       }
+
+      function pad(v) { return v < 10 ? '0' + v : '' + v; }
+
+      /* ---------------- カレンダー（ページの上） ---------------- */
+      var byDate = {};
+      var months = [];
+      source.forEach(function (sp, i) {
+        var d = sp.getAttribute('data-date');
+        if (!d) return;
+        byDate[d] = i;
+        var ym = d.slice(0, 7);
+        if (months.indexOf(ym) < 0) months.push(ym);
+      });
+      months.sort();
+      var calMonth = months[0] || null;
 
       function shiftMonth(delta) {
         var k = months.indexOf(calMonth) + delta;
@@ -216,7 +223,7 @@
       function renderCal() {
         if (!cal || !calMonth) return;
         var y = +calMonth.slice(0, 4), m = +calMonth.slice(5, 7);
-        var curDate = leaves[idx].getAttribute('data-date');
+        var curDate = source[idx].getAttribute('data-date');
         cal.textContent = '';
 
         var head = el('div', 'ehon-cal-head');
@@ -268,45 +275,157 @@
         cal.appendChild(el('p', 'ehon-cal-note', '色のついた日に、おはなしがあるよ。'));
       }
 
-      /* ---- 本のページ ---- */
+      /* ---------------- 本をつくる ---------------- */
+      function copy(node) {
+        var c = node.cloneNode(true);
+        c.removeAttribute('id');
+        Array.prototype.forEach.call(c.querySelectorAll('[id]'), function (e) { e.removeAttribute('id'); });
+        Array.prototype.forEach.call(c.querySelectorAll('img[loading]'), function (i) { i.removeAttribute('loading'); });
+        return c;
+      }
+      function art(i) { return source[i].querySelector('.ehon-art'); }
+      function story(i) { return source[i].querySelector('.ehon-story'); }
+
+      function turnButton(dir) {
+        var b = el('button', 'ehon-turn ehon-turn--' + dir, dir === 'prev' ? '‹' : '›');
+        b.type = 'button';
+        b.setAttribute('aria-label', dir === 'prev' ? 'まえのページ' : 'つぎのページ');
+        return b;
+      }
+
+      function build() {
+        mode = wide.matches ? 'spread' : 'single';
+        book.textContent = '';
+        book.className = 'ehon-book is-' + mode;
+        leaves = [];
+        base = null;
+
+        var row = el('div', 'ehon-row');
+        prevBtn = turnButton('prev');
+        nextBtn = turnButton('next');
+        stage = el('div', 'ehon-stage');
+
+        if (mode === 'spread') {
+          base = el('div', 'ehon-base ehon-page ehon-page--l');
+          base.appendChild(copy(art(0)));
+          var stack = el('div', 'ehon-stack');
+          source.forEach(function (sp, i) {
+            var leaf = el('div', 'ehon-leaf');
+            var f = el('div', 'ehon-face ehon-front ehon-page ehon-page--r');
+            f.appendChild(copy(story(i)));
+            leaf.appendChild(f);
+            if (i < n - 1) {
+              var b = el('div', 'ehon-face ehon-back ehon-page ehon-page--l');
+              b.appendChild(copy(art(i + 1)));
+              leaf.appendChild(b);
+            }
+            stack.appendChild(leaf);
+            leaves.push(leaf);
+          });
+          stage.appendChild(base);
+          stage.appendChild(stack);
+        } else {
+          source.forEach(function (sp, i) {
+            var leaf = el('div', 'ehon-leaf');
+            var f = el('div', 'ehon-face ehon-front ehon-card');
+            f.appendChild(copy(art(i)));
+            f.appendChild(copy(story(i)));
+            leaf.appendChild(f);
+            leaf.appendChild(el('div', 'ehon-face ehon-back'));
+            stage.appendChild(leaf);
+            leaves.push(leaf);
+          });
+        }
+
+        row.appendChild(prevBtn);
+        row.appendChild(stage);
+        row.appendChild(nextBtn);
+        book.appendChild(row);
+        prevBtn.addEventListener('click', prev);
+        nextBtn.addEventListener('click', next);
+        jump(idx);
+      }
+
+      /* ---------------- 表示の更新 ---------------- */
+      function setVis(e, v) {
+        if (!e) return;
+        e.setAttribute('aria-hidden', v ? 'false' : 'true');
+        if ('inert' in e) e.inert = !v;
+      }
+
+      function applyZ() {
+        leaves.forEach(function (l, i) {
+          if (l._lift) return;
+          l.style.zIndex = mode === 'spread' ? (i < idx ? i + 1 : 200 - i) : n - i;
+        });
+      }
+
       function fit() {
-        book.style.height = leaves[idx].offsetHeight + 'px';
+        if (!stage || !leaves.length) return;
+        if (mode === 'spread') {
+          var w = stage.clientWidth / 2;
+          var need = 0;
+          leaves.forEach(function (l) {
+            var s = l.firstChild.querySelector('.ehon-story:not(.ehon-story--center)');
+            if (s) need = Math.max(need, s.offsetHeight);
+          });
+          stage.style.height = Math.max(Math.round(w * 1.25), need + 64) + 'px';
+        } else {
+          stage.style.height = leaves[idx].offsetHeight + 'px';
+        }
       }
 
       function render(instant) {
-        leaves.forEach(function (leaf, i) {
-          var current = i === idx;
-          if (i <= idx) leaf.classList.remove('is-wait');
-          else if (i > idx + 1 || instant || reduce) leaf.classList.add('is-wait');
-          else setTimeout(function () { if (i > idx) leaf.classList.add('is-wait'); }, 950);
-          leaf.setAttribute('aria-hidden', current ? 'false' : 'true');
-          if ('inert' in leaf) leaf.inert = !current;
-        });
+        applyZ();
+        if (mode === 'spread') {
+          setVis(base, idx === 0);
+          leaves.forEach(function (l, i) {
+            setVis(l.children[0], i === idx);
+            setVis(l.children[1], i === idx - 1);
+          });
+        } else {
+          leaves.forEach(function (leaf, i) {
+            setVis(leaf, i === idx);
+            if (i <= idx) leaf.classList.remove('is-wait');
+            else if (i > idx + 1 || instant || reduce) leaf.classList.add('is-wait');
+            else setTimeout(function () { if (i > idx) leaf.classList.add('is-wait'); }, TURN);
+          });
+        }
         prevBtn.disabled = idx === 0;
         nextBtn.disabled = idx === n - 1;
-        count.textContent = (idx + 1) + ' / ' + n;
-        root.classList.toggle('is-first', idx === 0);
-        fit();
-        var d = leaves[idx].getAttribute('data-date');
+        countEl.hidden = false;
+        countEl.textContent = (idx + 1) + ' / ' + n;
+        var d = source[idx].getAttribute('data-date');
         if (d) calMonth = d.slice(0, 7);
         renderCal();
-      }
-
-      function hideAfter(leaf) {
-        if (reduce) { leaf.classList.add('is-gone'); return; }
-        setTimeout(function () { if (leaf.classList.contains('is-flipped')) leaf.classList.add('is-gone'); }, 950);
+        fit();
       }
 
       function syncHash() {
         if (!window.history || !history.replaceState) return;
-        try { history.replaceState(null, '', idx === 0 ? location.pathname + location.search : '#' + leaves[idx].id); } catch (e) {}
+        try { history.replaceState(null, '', idx === 0 ? location.pathname + location.search : '#' + source[idx].id); } catch (e) {}
+      }
+
+      /* ---------------- めくる ---------------- */
+      function lift(leaf) {
+        leaf._lift = true;
+        leaf.style.zIndex = 1000;
+        if (!reduce) leaf.classList.add('is-turning');
+        setTimeout(function () {
+          leaf._lift = false;
+          leaf.classList.remove('is-turning');
+          applyZ();
+        }, reduce ? 0 : TURN);
       }
 
       function next() {
         if (idx >= n - 1) return;
         var leaf = leaves[idx];
+        lift(leaf);
         leaf.classList.add('is-flipped');
-        hideAfter(leaf);
+        if (mode === 'single') {
+          setTimeout(function () { if (leaf.classList.contains('is-flipped')) leaf.classList.add('is-gone'); }, reduce ? 0 : TURN);
+        }
         idx++;
         render();
         syncHash();
@@ -315,6 +434,7 @@
       function prev() {
         if (idx <= 0) return;
         var leaf = leaves[idx - 1];
+        lift(leaf);
         leaf.classList.remove('is-gone');
         void leaf.offsetWidth;
         leaf.classList.remove('is-flipped');
@@ -327,9 +447,9 @@
         leaves.forEach(function (leaf, j) {
           leaf.classList.add('no-anim');
           leaf.classList.toggle('is-flipped', j < i);
-          leaf.classList.toggle('is-gone', j < i);
+          if (mode === 'single') leaf.classList.toggle('is-gone', j < i);
         });
-        void root.offsetWidth;
+        void book.offsetWidth;
         leaves.forEach(function (leaf) { leaf.classList.remove('no-anim'); });
         idx = i;
         render(true);
@@ -341,24 +461,14 @@
         var step = t > idx ? next : prev;
         var steps = Math.abs(t - idx);
         busy = true;
-        for (var k = 0; k < steps; k++) setTimeout(step, reduce ? 0 : k * 150);
-        setTimeout(function () { busy = false; }, reduce ? 0 : steps * 150 + 300);
+        for (var k = 0; k < steps; k++) setTimeout(step, reduce ? 0 : k * 160);
+        setTimeout(function () { busy = false; }, reduce ? 0 : steps * 160 + 300);
       }
 
       function openDate(key) {
         goTo(byDate[key]);
-        if (window.innerWidth < 900) {
-          root.querySelector('.ehon-main').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
-        }
+        book.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
       }
-
-      nextBtn.addEventListener('click', next);
-      prevBtn.addEventListener('click', prev);
-
-      book.addEventListener('click', function (e) {
-        if (e.target.closest('a, button')) return;
-        next();
-      });
 
       document.addEventListener('keydown', function (e) {
         if (e.target.closest && e.target.closest('input, textarea, select')) return;
@@ -376,17 +486,16 @@
         else if (dx > 50) prev();
       }, { passive: true });
 
+      var onMode = function () { build(); };
+      if (wide.addEventListener) wide.addEventListener('change', onMode); else wide.addListener(onMode);
       window.addEventListener('resize', fit);
       window.addEventListener('load', fit);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
-      nav.hidden = false;
       if (cal && months.length) cal.hidden = false;
-      leaves.forEach(function (leaf, i) { leaf.style.zIndex = n - i; });
-
-      var start = 0;
       var hash = location.hash.slice(1);
-      leaves.forEach(function (leaf, i) { if (leaf.id === hash) start = i; });
-      jump(start);
+      source.forEach(function (sp, i) { if (sp.id === hash) idx = i; });
+      build();
     })();
   </script>
 </body>
