@@ -20,11 +20,15 @@ images/
   ruru.webp / ruru.jpg    るるちゃん（640px）
   rei.webp / rei.jpg      れいちゃん（640px）
   top-small.webp          フッター用の小さい画像
+  pendants/               ペンダント紹介の画像（riri / ruru / rei / rei-with-riri、各 .webp と .jpg）
+    original/pendant-sisters-all.webp   4分割前の元画像（変更なし）
   favicon.png             ブラウザのタブに出るアイコン
 .nojekyll      GitHub Pages で Jekyll 処理をしないための空ファイル
 ```
 
 ## カスタマイズ
+
+- **ペンダント紹介**：`index.html` の `id="pendant"` セクション内、各 `<li class="pendant-card">` の `<h3>`（見出し）と `<p>`（説明文）、`alt` を書きかえるだけで変更できます。画像は `images/pendants/` の差し替えで更新します。
 
 - **画像について**：表示を速くするため、元の画像（各2MB前後）をWebP形式（50〜200KB）に変換しています。WebPに対応していない古いブラウザ向けにJPEGも用意しています。元の画像はGitの履歴に残っています。
 

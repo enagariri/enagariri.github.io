@@ -864,3 +864,150 @@ a {
     transition: none;
   }
 }
+
+/* ---------- ペンダント紹介 ---------- */
+.pendant-section {
+  --pd-ivory: #fbf6e9;
+  --pd-ink: #5b5043;
+  --pd-line: #e6dcc3;
+  --pd-green: #a9c5a0;
+  max-width: none;
+  margin-top: 64px;
+  padding: 64px 20px 72px;
+  color: var(--pd-ink);
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  background:
+    radial-gradient(ellipse at 8% 6%, rgba(190, 220, 180, 0.35), transparent 45%),
+    radial-gradient(ellipse at 94% 22%, rgba(180, 205, 240, 0.30), transparent 42%),
+    radial-gradient(ellipse at 20% 96%, rgba(245, 220, 140, 0.30), transparent 45%),
+    var(--pd-ivory);
+}
+
+.pendant-section > * {
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pendant-section .section-title,
+.pendant-section .section-lead {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.pendant-section .section-lead {
+  font-weight: 400;
+  color: #7d705e;
+}
+
+.pendant-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pendant-card {
+  overflow: hidden;
+  background: rgba(255, 253, 247, 0.96);
+  border: 1px solid var(--pd-line);
+  border-radius: 22px;
+  box-shadow: 0 6px 22px rgba(120, 100, 60, 0.12);
+}
+
+.pendant-zoom {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.pendant-zoom img {
+  width: 100%;
+  height: auto;
+}
+
+.pendant-zoom:focus-visible {
+  outline: 3px solid var(--pd-green);
+  outline-offset: -3px;
+}
+
+.pendant-body {
+  padding: 20px 24px 26px;
+}
+
+.pendant-name {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.pendant-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.95;
+}
+
+@media (min-width: 721px) {
+  .pendant-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+/* 拡大表示 */
+.lightbox {
+  width: min(94vw, 1200px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  overflow: visible;
+}
+
+.lightbox::backdrop {
+  background: rgba(50, 42, 30, 0.72);
+}
+
+.lightbox img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 16px;
+  cursor: zoom-out;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #fffdf7;
+  color: #5b5043;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 720px) {
+  .site-nav a {
+    padding: 4px 0;
+    font-size: 0.72rem;
+    letter-spacing: -0.02em;
+  }
+}
