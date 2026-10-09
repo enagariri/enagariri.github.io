@@ -13,6 +13,7 @@
 ```
 index.html     ページ本体（トップ／キャラクター紹介／ストーリー／SNS）
 pendant.html   三姉妹の小さなペンダント紹介ページ
+stories.html   三姉妹のおはなしページ（ららの木のクリスマスなど）
 youtube.html   YouTube紹介ページ（最新動画の埋め込みつき）
 style.css      デザイン（スマホ対応）
 images/
@@ -23,11 +24,15 @@ images/
   top-small.webp          フッター用の小さい画像
   pendants/               ペンダント紹介の画像（riri / ruru / rei / rei-with-riri、各 .webp と .jpg）
     original/pendant-sisters-all.webp   4分割前の元画像（変更なし）
+    original/pendant-sisters-christmas.webp   クリスマスのおはなしの元画像（変更なし）
+    christmas.webp / christmas.jpg   クリスマスのおはなしの画像（1000px）
   favicon.png             ブラウザのタブに出るアイコン
 .nojekyll      GitHub Pages で Jekyll 処理をしないための空ファイル
 ```
 
 ## カスタマイズ
+
+- **おはなしを増やす**：`stories.html` の `<article class="gift">` ブロックを1つコピーし、`id`・見出し・画像・本文を書きかえると、新しいおはなしが下に並びます。
 
 - **ペンダント紹介**：`pendant.html` 内、各 `<li class="pendant-card">` の `<h3>`（見出し）と `<p>`（説明文）、`alt` を書きかえるだけで変更できます。画像は `images/pendants/` の差し替えで更新します。
 
