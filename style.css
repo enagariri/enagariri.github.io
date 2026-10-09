@@ -1088,6 +1088,10 @@ a {
   box-shadow: 0 4px 14px rgba(150, 140, 120, 0.2);
 }
 
+.ehon-image--tall {
+  max-width: 360px;
+}
+
 .ehon-text p {
   margin: 0 0 0.9em;
   line-height: 2;

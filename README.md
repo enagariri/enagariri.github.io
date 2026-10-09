@@ -23,6 +23,7 @@ images/
   ruru.webp / ruru.jpg    るるちゃん（640px）
   rei.webp / rei.jpg      れいちゃん（640px）
   top-small.webp          フッター用の小さい画像
+  ehon/                   絵本ページの画像（ららのき3枚・表紙。original/ に元画像）
   pendants/               ペンダント紹介の画像（riri / ruru / rei / rei-with-riri、各 .webp と .jpg）
     original/pendant-sisters-all.webp   4分割前の元画像（変更なし）
     original/pendant-sisters-christmas.webp   クリスマスのおはなしの元画像（変更なし）
