@@ -872,7 +872,7 @@ a {
   --pd-line: #e6dcc3;
   --pd-green: #a9c5a0;
   max-width: none;
-  margin-top: 64px;
+  margin-top: 0;
   padding: 64px 20px 72px;
   color: var(--pd-ink);
   font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
@@ -1010,4 +1010,18 @@ a {
     font-size: 0.72rem;
     letter-spacing: -0.02em;
   }
+}
+
+.pendant-back {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.pendant-back a {
+  display: inline-block;
+  padding: 6px 20px;
+  border: 1px solid var(--pd-line);
+  border-radius: 999px;
+  background: rgba(255, 253, 247, 0.9);
+  text-decoration: none;
 }

@@ -12,6 +12,7 @@
 
 ```
 index.html     ページ本体（トップ／キャラクター紹介／ストーリー／SNS）
+pendant.html   三姉妹の小さなペンダント紹介ページ
 youtube.html   YouTube紹介ページ（最新動画の埋め込みつき）
 style.css      デザイン（スマホ対応）
 images/
@@ -28,7 +29,7 @@ images/
 
 ## カスタマイズ
 
-- **ペンダント紹介**：`index.html` の `id="pendant"` セクション内、各 `<li class="pendant-card">` の `<h3>`（見出し）と `<p>`（説明文）、`alt` を書きかえるだけで変更できます。画像は `images/pendants/` の差し替えで更新します。
+- **ペンダント紹介**：`pendant.html` 内、各 `<li class="pendant-card">` の `<h3>`（見出し）と `<p>`（説明文）、`alt` を書きかえるだけで変更できます。画像は `images/pendants/` の差し替えで更新します。
 
 - **画像について**：表示を速くするため、元の画像（各2MB前後）をWebP形式（50〜200KB）に変換しています。WebPに対応していない古いブラウザ向けにJPEGも用意しています。元の画像はGitの履歴に残っています。
 
