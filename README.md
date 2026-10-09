@@ -23,6 +23,8 @@ images/
   top-small.webp          フッター用の小さい画像
   pendants/               ペンダント紹介の画像（riri / ruru / rei / rei-with-riri、各 .webp と .jpg）
     original/pendant-sisters-all.webp   4分割前の元画像（変更なし）
+    original/pendant-sisters-christmas.webp   クリスマスのおはなしの元画像（変更なし）
+    christmas.webp / christmas.jpg   クリスマスのおはなしの画像（1000px）
   favicon.png             ブラウザのタブに出るアイコン
 .nojekyll      GitHub Pages で Jekyll 処理をしないための空ファイル
 ```
