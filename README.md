@@ -13,7 +13,8 @@
 ```
 index.html     ページ本体（トップ／キャラクター紹介／ストーリー／SNS）
 pendant.html   三姉妹の小さなペンダント紹介ページ
-stories.html   三姉妹のおはなしページ（ららの木のクリスマスなど）
+ehon.html      三姉妹の絵本ページ（ページをめくって読むおはなし）
+stories.html   ehon.html への転送ページ（以前のURL用）
 youtube.html   YouTube紹介ページ（最新動画の埋め込みつき）
 style.css      デザイン（スマホ対応）
 images/
@@ -32,7 +33,7 @@ images/
 
 ## カスタマイズ
 
-- **おはなしを増やす**：`stories.html` の `<article class="gift">` ブロックを1つコピーし、`id`・見出し・画像・本文を書きかえると、新しいおはなしが下に並びます。
+- **絵本にページを足す**：`ehon.html` の `<section class="ehon-leaf">`（おはなしのページ）を1つコピーし、`id`・日付・見出し・画像・本文を書きかえて、「おしまいのページ」の前に追加します。ページの順番は、HTMLに書いた順番どおりです。
 
 - **ペンダント紹介**：`pendant.html` 内、各 `<li class="pendant-card">` の `<h3>`（見出し）と `<p>`（説明文）、`alt` を書きかえるだけで変更できます。画像は `images/pendants/` の差し替えで更新します。
 

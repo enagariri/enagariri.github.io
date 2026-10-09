@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三姉妹のえほん｜エナガりりちゃん</title>
+  <meta name="description" content="三姉妹の小さなおはなしを、絵本のようにページをめくって読めるページです。">
+  <meta property="og:title" content="三姉妹のえほん｜エナガりりちゃん">
+  <meta property="og:description" content="三姉妹の小さなおはなしを、絵本のようにページをめくって読めるページです。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/top.jpg">
+  <meta name="theme-color" content="#fdeef2">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <img src="images/favicon.png" alt="" width="36" height="36">
+      <span>エナガりりちゃん</span>
+    </a>
+    <nav class="site-nav" aria-label="メインメニュー">
+      <a href="index.html#top">トップ</a>
+      <a href="index.html#characters">キャラクター</a>
+      <a href="index.html#story">ストーリー</a>
+      <a href="ehon.html" aria-current="page">絵本</a>
+      <a href="index.html#music">楽曲</a>
+      <a href="index.html#sns">SNS</a>
+      <a href="youtube.html">YouTube</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="pendant-section tale-section" aria-labelledby="ehon-title">
+      <!--
+        絵本のページ。上から順にめくれます。
+        新しいおはなしは、下の「おはなしのページ」の <section class="ehon-leaf"> を1つコピーし、
+        id・日付・見出し・画像・本文を書きかえて「おしまいのページ」の前に追加してください。
+      -->
+      <div class="ehon" id="ehon">
+        <div class="ehon-book">
+
+          <!-- 表紙 -->
+          <section class="ehon-leaf" id="cover" aria-label="表紙">
+            <div class="ehon-face ehon-front ehon-cover">
+              <h1 class="ehon-cover-title" id="ehon-title">三姉妹のえほん</h1>
+              <picture>
+                <source srcset="images/ehon/cover.webp" type="image/webp">
+                <img class="ehon-cover-image" src="images/ehon/cover.jpg" alt="花にかこまれて、枝にならんでよりそう三姉妹" width="480" height="480" decoding="async">
+              </picture>
+              <p class="ehon-cover-sub">りり・るる・れいの、小さなおはなし</p>
+              <p class="ehon-hint">ページをめくってね</p>
+            </div>
+            <div class="ehon-back" aria-hidden="true"></div>
+          </section>
+
+          <!-- おはなしのページ -->
+          <section class="ehon-leaf" id="rara-christmas" aria-label="12月25日 ららの木からのクリスマスプレゼント">
+            <div class="ehon-face ehon-front">
+              <p class="ehon-date">12月25日</p>
+              <h2 class="ehon-title">ららの木からの<wbr>クリスマスプレゼント</h2>
+              <picture>
+                <source srcset="images/pendants/christmas.webp" type="image/webp">
+                <img class="ehon-image" src="images/pendants/christmas.jpg" alt="スズランとルリマツリとロウバイの花にかこまれ、枝にならんでよりそう三姉妹。胸もとには真珠、ラピスラズリ、琥珀のペンダント" width="1000" height="1000" loading="lazy" decoding="async">
+              </picture>
+              <div class="ehon-text">
+                <p>雪がしずかに降る、クリスマスの朝。</p>
+                <p>ららの木から、三姉妹に小さな贈りものが届きました。</p>
+                <p>りりちゃんには、スズランのように白く輝く真珠。</p>
+                <p>るるちゃんには、夜空の星を閉じこめたようなラピスラズリ。</p>
+                <p>れいちゃんには、おひさまのぬくもりを宿した琥珀。</p>
+                <p>そして、れいちゃんの琥珀には、ときどき小さな白い光がともります。</p>
+                <p>それは、りりと一緒にいる、やさしいしるし。</p>
+                <p class="ehon-last">三つの小さな宝石は、今日も三姉妹の胸で、そっと輝いています。</p>
+              </div>
+              <p class="ehon-link"><a href="pendant.html">三姉妹の小さなペンダントを見る →</a></p>
+            </div>
+            <div class="ehon-back" aria-hidden="true"></div>
+          </section>
+
+          <!-- おしまいのページ -->
+          <section class="ehon-leaf" id="to-be-continued" aria-label="つづく">
+            <div class="ehon-face ehon-front ehon-end">
+              <p class="ehon-end-title">つづく</p>
+              <p class="ehon-end-text">つぎのおはなしを、<br>おたのしみに。</p>
+            </div>
+            <div class="ehon-back" aria-hidden="true"></div>
+          </section>
+
+        </div>
+
+        <div class="ehon-nav" hidden>
+          <button type="button" class="ehon-btn" data-ehon="prev">← まえのページ</button>
+          <span class="ehon-count" aria-live="polite"></span>
+          <button type="button" class="ehon-btn" data-ehon="next">つぎのページ →</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="images/top-small.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
+    <p><small>&copy; エナガりりちゃん</small></p>
+  </footer>
+
+
+  <script>
+    (function () {
+      var root = document.getElementById('ehon');
+      if (!root) return;
+      var leaves = Array.prototype.slice.call(root.querySelectorAll('.ehon-leaf'));
+      var book = root.querySelector('.ehon-book');
+      var nav = root.querySelector('.ehon-nav');
+      var prevBtn = root.querySelector('[data-ehon="prev"]');
+      var nextBtn = root.querySelector('[data-ehon="next"]');
+      var count = root.querySelector('.ehon-count');
+      var n = leaves.length;
+      var idx = 0;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      nav.hidden = false;
+      leaves.forEach(function (leaf, i) { leaf.style.zIndex = n - i; });
+
+      function fit() {
+        book.style.height = leaves[idx].offsetHeight + 'px';
+      }
+
+      function render(instant) {
+        leaves.forEach(function (leaf, i) {
+          var current = i === idx;
+          if (i <= idx) leaf.classList.remove('is-wait');
+          else if (i > idx + 1 || instant || reduce) leaf.classList.add('is-wait');
+          else setTimeout(function () { if (i > idx) leaf.classList.add('is-wait'); }, 950);
+          leaf.setAttribute('aria-hidden', current ? 'false' : 'true');
+          if ('inert' in leaf) leaf.inert = !current;
+        });
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === n - 1;
+        count.textContent = (idx + 1) + ' / ' + n;
+        fit();
+        root.classList.toggle('is-first', idx === 0);
+      }
+
+      function hideAfter(leaf) {
+        if (reduce) { leaf.classList.add('is-gone'); return; }
+        setTimeout(function () { if (leaf.classList.contains('is-flipped')) leaf.classList.add('is-gone'); }, 950);
+      }
+
+      function next() {
+        if (idx >= n - 1) return;
+        var leaf = leaves[idx];
+        leaf.classList.add('is-flipped');
+        hideAfter(leaf);
+        idx++;
+        render();
+      }
+
+      function prev() {
+        if (idx <= 0) return;
+        var leaf = leaves[idx - 1];
+        leaf.classList.remove('is-gone');
+        void leaf.offsetWidth;
+        leaf.classList.remove('is-flipped');
+        idx--;
+        render();
+      }
+
+      function jump(i) {
+        leaves.forEach(function (leaf, j) {
+          leaf.classList.add('no-anim');
+          leaf.classList.toggle('is-flipped', j < i);
+          leaf.classList.toggle('is-gone', j < i);
+        });
+        void root.offsetWidth;
+        leaves.forEach(function (leaf) { leaf.classList.remove('no-anim'); });
+        idx = i;
+        render(true);
+      }
+
+      nextBtn.addEventListener('click', next);
+      prevBtn.addEventListener('click', prev);
+
+      root.querySelector('.ehon-book').addEventListener('click', function (e) {
+        if (e.target.closest('a, button')) return;
+        next();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') next();
+        else if (e.key === 'ArrowLeft') prev();
+      });
+
+      var sx = null;
+      root.addEventListener('touchstart', function (e) { sx = e.changedTouches[0].clientX; }, { passive: true });
+      root.addEventListener('touchend', function (e) {
+        if (sx === null) return;
+        var dx = e.changedTouches[0].clientX - sx;
+        sx = null;
+        if (dx < -50) next();
+        else if (dx > 50) prev();
+      }, { passive: true });
+
+      window.addEventListener('resize', fit);
+      window.addEventListener('load', fit);
+
+      var start = 0;
+      var hash = location.hash.slice(1);
+      leaves.forEach(function (leaf, i) { if (leaf.id === hash) start = i; });
+      jump(start);
+    })();
+  </script>
+</body>
+</html>
