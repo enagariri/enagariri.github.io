@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,6 +27,7 @@
     <nav class="site-nav" aria-label="メインメニュー">
       <a href="#top">トップ</a>
       <a href="#characters">キャラクター</a>
+      <a href="#pendant">ペンダント</a>
       <a href="#story">ストーリー</a>
       <a href="#music">楽曲</a>
       <a href="#sns">SNS</a>
@@ -123,6 +124,63 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <!-- ペンダント紹介（見出し・説明文・画像は下の各 <li> を書きかえるだけで変更できます） -->
+    <section id="pendant" class="section pendant-section" aria-labelledby="pendant-title">
+      <h2 class="section-title" id="pendant-title"><span>三姉妹の小さなペンダント</span></h2>
+      <p class="section-lead">それぞれの花と、胸もとでひかる小さな宝石のおはなし。</p>
+
+      <ul class="pendant-grid">
+        <li class="pendant-card pendant-card--riri">
+          <button type="button" class="pendant-zoom" data-full="images/pendants/riri.webp" data-alt="スズランの花のそばで、目を閉じて眠るりりちゃん。胸もとには小さな真珠のペンダント" aria-label="りりちゃんの画像を拡大して見る">
+            <picture>
+              <source srcset="images/pendants/riri.webp" type="image/webp">
+              <img src="images/pendants/riri.jpg" alt="スズランの花のそばで、目を閉じて眠るりりちゃん。胸もとには小さな真珠のペンダント" width="763" height="473" loading="lazy" decoding="async">
+            </picture>
+          </button>
+          <div class="pendant-body">
+            <h3 class="pendant-name">りりちゃん</h3>
+            <p class="pendant-text">いつも眠っている、やさしいお姉さん。<br>スズランの花と、小さな真珠のペンダント。</p>
+          </div>
+        </li>
+        <li class="pendant-card pendant-card--ruru">
+          <button type="button" class="pendant-zoom" data-full="images/pendants/ruru.webp" data-alt="ルリマツリの花にかこまれて、元気に枝にとまるるるちゃん。胸もとには金色の粒がきらめくラピスラズリのペンダント" aria-label="るるちゃんの画像を拡大して見る">
+            <picture>
+              <source srcset="images/pendants/ruru.webp" type="image/webp">
+              <img src="images/pendants/ruru.jpg" alt="ルリマツリの花にかこまれて、元気に枝にとまるるるちゃん。胸もとには金色の粒がきらめくラピスラズリのペンダント" width="767" height="473" loading="lazy" decoding="async">
+            </picture>
+          </button>
+          <div class="pendant-body">
+            <h3 class="pendant-name">るるちゃん</h3>
+            <p class="pendant-text">いつも元気で、みんなにやさしい妹。<br>ルリマツリの花と、星を散りばめたようなラピスラズリのペンダント。</p>
+          </div>
+        </li>
+        <li class="pendant-card pendant-card--rei">
+          <button type="button" class="pendant-zoom" data-full="images/pendants/rei.webp" data-alt="ロウバイの花の咲く枝にとまるれいちゃん。胸もとには蜂蜜色の琥珀のペンダント" aria-label="れいちゃん（ふだん）の画像を拡大して見る">
+            <picture>
+              <source srcset="images/pendants/rei.webp" type="image/webp">
+              <img src="images/pendants/rei.jpg" alt="ロウバイの花の咲く枝にとまるれいちゃん。胸もとには蜂蜜色の琥珀のペンダント" width="763" height="544" loading="lazy" decoding="async">
+            </picture>
+          </button>
+          <div class="pendant-body">
+            <h3 class="pendant-name">れいちゃん（ふだん）</h3>
+            <p class="pendant-text">好奇心いっぱいの、元気な末っ子。<br>ロウバイの花と、蜂蜜色に輝く琥珀のペンダント。</p>
+          </div>
+        </li>
+        <li class="pendant-card pendant-card--rei-riri">
+          <button type="button" class="pendant-zoom" data-full="images/pendants/rei-with-riri.webp" data-alt="ロウバイとスズランの花のそばにとまるれいちゃん。胸もとの琥珀のペンダントに、小さな白い光がきらりと輝く" aria-label="れいちゃん（りりと一緒）の画像を拡大して見る">
+            <picture>
+              <source srcset="images/pendants/rei-with-riri.webp" type="image/webp">
+              <img src="images/pendants/rei-with-riri.jpg" alt="ロウバイとスズランの花のそばにとまるれいちゃん。胸もとの琥珀のペンダントに、小さな白い光がきらりと輝く" width="767" height="544" loading="lazy" decoding="async">
+            </picture>
+          </button>
+          <div class="pendant-body">
+            <h3 class="pendant-name">れいちゃん（りりと一緒）</h3>
+            <p class="pendant-text">りりといつも一緒に過ごすれいちゃん。<br>琥珀の中には、小さな白い光がきらり。<br>そばにはロウバイとスズランの花。</p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <!-- ストーリー -->
@@ -328,5 +386,27 @@
     <img src="images/top-small.webp" alt="" width="120" height="120" loading="lazy" decoding="async">
     <p><small>&copy; エナガりりちゃん</small></p>
   </footer>
+
+  <!-- 画像の拡大表示 -->
+  <dialog class="lightbox" id="lightbox" aria-label="画像の拡大表示">
+    <button type="button" class="lightbox-close" aria-label="閉じる">×</button>
+    <img src="" alt="" width="768" height="512">
+  </dialog>
+  <script>
+    (function () {
+      var box = document.getElementById('lightbox');
+      if (!box || typeof box.showModal !== 'function') return;
+      var img = box.querySelector('img');
+      document.querySelectorAll('.pendant-zoom').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          img.src = btn.dataset.full;
+          img.alt = btn.dataset.alt;
+          box.showModal();
+        });
+      });
+      box.addEventListener('click', function () { box.close(); });
+      box.addEventListener('close', function () { img.removeAttribute('src'); });
+    })();
+  </script>
 </body>
 </html>
