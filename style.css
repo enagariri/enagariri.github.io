@@ -1580,3 +1580,13 @@ a {
   line-height: 1.7;
   color: #7d705e;
 }
+
+.ehon-cover-date {
+  margin: 22px 0 8px;
+}
+
+.ehon-cover-text p {
+  margin: 0 0 0.6em;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
