@@ -15,7 +15,6 @@ index.html     ページ本体（トップ／キャラクター紹介／スト�
 pendant.html   三姉妹の小さなペンダント紹介ページ
 ehon.html      三姉妹の絵本ページ（ページをめくって読むおはなし）
 stories.html   ehon.html への転送ページ（以前のURL用）
-instagram.html インスタの投稿ページ（寝言カードなど）
 youtube.html   YouTube紹介ページ（最新動画の埋め込みつき）
 style.css      デザイン（スマホ対応）
 images/
@@ -24,8 +23,7 @@ images/
   ruru.webp / ruru.jpg    るるちゃん（640px）
   rei.webp / rei.jpg      れいちゃん（640px）
   top-small.webp          フッター用の小さい画像
-  ehon/                   絵本ページの画像（ららのき3枚・表紙。original/ に元画像）
-  instagram/              インスタ投稿の画像（day-006 など。original/ に元画像）
+  ehon/                   絵本ページの画像（寝言カード・ららのき・表紙。original/ に元画像）
   pendants/               ペンダント紹介の画像（riri / ruru / rei / rei-with-riri、各 .webp と .jpg）
     original/pendant-sisters-all.webp   4分割前の元画像（変更なし）
     original/pendant-sisters-christmas.webp   クリスマスのおはなしの元画像（変更なし）
@@ -35,8 +33,6 @@ images/
 ```
 
 ## カスタマイズ
-
-- **インスタの投稿を足す**：`instagram.html` の `<li class="post-card">` を1つコピーし、先頭（新しい日付が上）に追加して、画像・日付・文章を書きかえます。画像は `images/instagram/` に入れます。
 
 - **絵本にページを足す**：`ehon.html` の `<section class="ehon-spread">`（見開き1つ分）を1つコピーし、`id`・`data-date`（例：`2026-12-25`）・日付の表示・見出し・画像・本文を書きかえて、「おしまいのページ」の前に追加します。左のページは `.ehon-art`（絵）、右のページは `.ehon-story`（日付・見出し・本文）です。`data-date` をつけたページが、ページ上部のカレンダーから読めるようになります。ページは日付の早い順に並べてください（めくる順番は、HTMLに書いた順番です）。タブレット・パソコンでは左に絵・右に文章の見開き、スマホでは上に絵・下に文章で表示されます。
 
