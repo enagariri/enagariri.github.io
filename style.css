@@ -1573,3 +1573,10 @@ a {
     font-size: 0.88rem;
   }
 }
+
+.ehon-en {
+  margin: 0 0 0.6em;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #7d705e;
+}
