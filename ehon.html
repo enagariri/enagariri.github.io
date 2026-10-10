@@ -43,6 +43,7 @@
         新しいおはなしは、下の「おはなし」の <section class="ehon-spread"> を1つコピーし、
         id・data-date（年-月-日）・日付の表示・見出し・画像・本文を書きかえて「おしまいのページ」の前に追加してください。
         data-date をつけたページが、ページ上部のカレンダーから読めるようになります。
+        同じ日のおはなしが何ページも続くとき（カルーセル）は、2ページ目以降に data-date ではなく data-day="年-月-日" をつけます。
         ページは日付の早い順に並べてください（めくる順番は、HTMLに書いた順番です）。
       -->
       <h1 class="section-title" id="ehon-title"><span>三姉妹のえほん</span></h1>
@@ -71,6 +72,55 @@
           </section>
 
           <!-- おはなし（日付の早い順に並べます） -->
+          <section class="ehon-spread" id="day-004" data-date="2026-09-26" aria-label="9月26日 お月見の夜 1/3">
+            <div class="ehon-art">
+              <picture>
+                <source srcset="images/ehon/day-004-1.webp" type="image/webp">
+                <img class="ehon-image" src="images/ehon/day-004-1.jpg" alt="まんまるのお月さまの下、枝の上でよりそうりりちゃんとるるちゃん。すすきとお月見だんごがそばにある" width="800" height="1000" decoding="async">
+              </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">9月26日（土）　Day 4　1 / 3</p>
+              <h2 class="ehon-title">お月見の夜</h2>
+              <div class="ehon-text">
+                <p class="ehon-last">お月見の夜。<br>りりはもちろん、ねてました。</p>
+                <p class="ehon-en" lang="en">Moon-viewing night. Riri slept through it, of course.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="ehon-spread" id="day-004-2" data-day="2026-09-26" aria-label="お月見の夜 2/3">
+            <div class="ehon-art">
+              <picture>
+                <source srcset="images/ehon/day-004-2.webp" type="image/webp">
+                <img class="ehon-image" src="images/ehon/day-004-2.jpg" alt="満月の夜、紅葉とすすきの枝の上で、ぴったりよりそって眠るりりちゃんと、そばにいるるるちゃん" width="800" height="1000" decoding="async">
+              </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">9月26日（土）　Day 4　2 / 3</p>
+              <h2 class="ehon-title">お月見の夜</h2>
+              <div class="ehon-text">
+                <p class="ehon-last">おだんごと、すすきと、<br>まんまるのお月さま。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="ehon-spread" id="day-004-3" data-day="2026-09-26" aria-label="お月見の夜 3/3">
+            <div class="ehon-art">
+              <picture>
+                <source srcset="images/ehon/day-004-3.webp" type="image/webp">
+                <img class="ehon-image" src="images/ehon/day-004-3.jpg" alt="満月の下、スズランのそばで、ふわふわの体をまるめてぐっすり眠るりりちゃん" width="800" height="1000" decoding="async">
+              </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">9月26日（土）　Day 4　3 / 3</p>
+              <h2 class="ehon-title">お月見の夜</h2>
+              <div class="ehon-text">
+                <p class="ehon-last">りりは、ぐっすり。<br>おやすみなさい。</p>
+              </div>
+            </div>
+          </section>
+
           <section class="ehon-spread" id="sleeptalk-006" data-date="2026-09-28" aria-label="9月28日（月） 寝言カード Day 6">
             <div class="ehon-art">
               <picture>
@@ -85,6 +135,23 @@
                 <p class="ehon-last">すやすや…<br>ちいさな雲になる夢をみたの。</p>
                 <p class="ehon-en" lang="en">Zzz… I dreamed I was a tiny cloud.</p>
                 <p>— りり</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="ehon-spread" id="day-008" data-date="2026-09-30" aria-label="9月30日 自作曲×眠るりりちゃん">
+            <div class="ehon-art">
+              <picture>
+                <source srcset="images/ehon/day-008.webp" type="image/webp">
+                <img class="ehon-image" src="images/ehon/day-008.jpg" alt="夕やけの空の下、紅葉の枝によりそうりりちゃんとるるちゃん。ふたりはスズランとルリマツリの花のポシェットをさげている" width="640" height="1138" decoding="async">
+              </picture>
+            </div>
+            <div class="ehon-story">
+              <p class="ehon-date">9月30日（水）　Day 8</p>
+              <h2 class="ehon-title">自作曲×眠るりりちゃん</h2>
+              <div class="ehon-text">
+                <p class="ehon-last">秋の、ねむたい夜のための音楽。<br>🎵</p>
+                <p class="ehon-en" lang="en">Music for sleepy autumn evenings.</p>
               </div>
             </div>
           </section>
@@ -253,6 +320,9 @@
         return e;
       }
 
+      /* 続きのページ（data-day）も、同じ日として扱う */
+      function dayOf(i) { return source[i].getAttribute('data-date') || source[i].getAttribute('data-day'); }
+
       function pad(v) { return v < 10 ? '0' + v : '' + v; }
 
       /* ---------------- カレンダー（ページの上） ---------------- */
@@ -276,7 +346,7 @@
       function renderCal() {
         if (!cal || !calMonth) return;
         var y = +calMonth.slice(0, 4), m = +calMonth.slice(5, 7);
-        var curDate = source[idx].getAttribute('data-date');
+        var curDate = dayOf(idx);
         cal.textContent = '';
 
         var head = el('div', 'ehon-cal-head');
@@ -448,7 +518,7 @@
         nextBtn.disabled = idx === n - 1;
         countEl.hidden = false;
         countEl.textContent = (idx + 1) + ' / ' + n;
-        var d = source[idx].getAttribute('data-date');
+        var d = dayOf(idx);
         if (d) calMonth = d.slice(0, 7);
         renderCal();
         fit();
