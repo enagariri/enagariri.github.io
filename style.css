@@ -192,7 +192,6 @@ a {
 .chara--riri { --c: var(--riri); --c-bg: var(--riri-bg); }
 .chara--ruru { --c: var(--ruru); --c-bg: var(--ruru-bg); }
 .chara--rei  { --c: var(--rei);  --c-bg: var(--rei-bg); }
-.track--utsusomino { --c: #e8a86b; --c-bg: #fdf3e8; }
 
 .chara-image {
   background: var(--c-bg);
