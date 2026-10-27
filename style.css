@@ -323,6 +323,7 @@ a {
 .track--ruru     { --c: var(--ruru); --c-bg: var(--ruru-bg); }
 .track--together { --c: var(--pink); --c-bg: var(--bg-soft); }
 .track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); }
+.track--hidamari { --c: #f6c99a; --c-bg: #fff4e8; }
 
 .track-tag {
   display: inline-block;
@@ -1631,4 +1632,27 @@ a {
   margin: 0 0 0.6em;
   font-size: 0.95rem;
   line-height: 1.85;
+}
+
+/* 配信サイトなどへのリンク */
+.track-links {
+  margin: 14px 0 0;
+}
+
+.track-link {
+  display: inline-block;
+  padding: 8px 22px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  background: var(--pink-deep);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.track-link:hover,
+.track-link:focus-visible {
+  transform: translateY(-2px);
+  background: #d86e8b;
 }
