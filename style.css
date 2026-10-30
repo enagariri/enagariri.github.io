@@ -324,6 +324,7 @@ a {
 .track--together { --c: var(--pink); --c-bg: var(--bg-soft); }
 .track--birdsong { --c: var(--rei); --c-bg: var(--rei-bg); }
 .track--hidamari { --c: #f6c99a; --c-bg: #fff4e8; }
+.track--morinoko { --c: #b8dcc4; --c-bg: #f1f9f3; }
 
 .track-tag {
   display: inline-block;
