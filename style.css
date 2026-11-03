@@ -1668,9 +1668,11 @@ a {
 
 .song-list li {
   counter-increment: track;
-  padding: 7px 0;
+  padding: 6px 0;
   border-bottom: 1px dashed var(--line);
+  font-size: 0.9rem;
   font-weight: 700;
+  line-height: 1.5;
 }
 
 .song-list li::before {
@@ -1686,16 +1688,17 @@ a {
 
 .song-list-en {
   display: block;
-  font-size: 0.85em;
+  font-size: 0.78rem;
   font-weight: 400;
   color: var(--text-sub, inherit);
 }
 
 .song-list-soon {
   display: inline-block;
-  margin-top: 4px;
-  padding: 1px 8px;
-  font-size: 0.75em;
+  margin-left: 6px;
+  padding: 0 7px;
+  font-size: 0.7rem;
+  line-height: 1.5;
   font-weight: 400;
   color: var(--pink-deep);
   border: 1px solid var(--pink-deep);
