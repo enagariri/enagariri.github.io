@@ -53,26 +53,11 @@
       </div>
 
       <h2 class="yt-latest-title">最新の動画</h2>
-      <!--
-        最新動画の埋め込み
-        data-channel-id に YouTube のチャンネルID（UC から始まる24文字）を入れてください。
-        先頭の「UC」を「UU」に変えた「アップロード動画の再生リスト」を埋め込むので、
-        新しい動画を投稿すると自動でいちばん上に表示されます。
-      -->
-      <div class="yt-embed" id="yt-embed" data-channel-id="UCsV4nQggfVD49KcNHjkDsfg">
-        <div class="yt-embed-fallback">
-          <p>動画はYouTubeチャンネルで見られます。</p>
-          <a href="https://www.youtube.com/@enagariri" target="_blank" rel="noopener">チャンネルをひらく</a>
-        </div>
+      <div class="yt-embed">
+        <iframe src="https://www.youtube.com/embed/OeVBtRButKU" title="Morinoko" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
       <h2 class="yt-latest-title">これまでの動画</h2>
-
-      <h3 class="yt-video-title">Morinoko</h3>
-      <div class="yt-embed">
-        <iframe src="https://www.youtube.com/embed/OeVBtRButKU" title="Morinoko" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <p class="yt-short-link"><a href="https://youtu.be/OeVBtRButKU" target="_blank" rel="noopener">YouTubeで見る</a></p>
 
       <h3 class="yt-video-title">Together again</h3>
       <div class="yt-embed">
@@ -99,22 +84,5 @@
     <p><small>&copy; エナガりりちゃん</small></p>
   </footer>
 
-  <script>
-    (function () {
-      var box = document.getElementById('yt-embed');
-      var channelId = (box.getAttribute('data-channel-id') || '').trim();
-      if (!/^UC[\w-]{22}$/.test(channelId)) return;
-
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/videoseries?list=UU' + channelId.slice(2);
-      iframe.title = 'りりちゃんのYouTube 最新の動画';
-      iframe.loading = 'lazy';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.allowFullscreen = true;
-      box.innerHTML = '';
-      box.appendChild(iframe);
-    })();
-  </script>
 </body>
 </html>
