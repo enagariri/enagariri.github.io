@@ -1642,6 +1642,7 @@ a {
 
 .track-link {
   display: inline-block;
+  margin: 0 6px 8px 0;
   padding: 8px 22px;
   font-weight: 700;
   color: var(--white);
